@@ -1,0 +1,16 @@
+<h1>Upload Users CSV</h1>
+<%= form_tag({:action => :create}, multipart: true) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag( "Import" ) %>
+<% end %>
+
+<% if @errors.present? %>
+  <h1>CSV Results</h1>
+  <% @errors.each_with_index do |error, index| %>
+    <%= "#{index+1}. #{error}" %>
+    <br>
+  <% end %>
+
+
+  <a href="javascript:history.back()">Clear Results</a>
+<% end %>
