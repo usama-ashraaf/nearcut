@@ -1,6 +1,6 @@
 <h1>Upload Users CSV</h1>
 <%= form_tag({:action => :create}, multipart: true) do %>
-  <%= file_field_tag :file %>
+  <%= file_field_tag :file, accept: 'text/csv' %>
   <%= submit_tag( "Import" ) %>
 <% end %>
 
